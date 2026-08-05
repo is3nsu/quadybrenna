@@ -243,20 +243,21 @@
 
       <div class="grid md:grid-cols-2 gap-12 mb-16">
         <!-- Contact Form -->
-        <form class="space-y-6 bg-zinc-900 p-8 rounded-2xl border border-zinc-800">
+        <form id="contact-form" action="https://formsubmit.co/ajax/sensuqq@pm.me" method="POST" class="space-y-6 bg-zinc-900 p-8 rounded-2xl border border-zinc-800">
+            <input type="hidden" name="_captcha" value="false">
           <div>
             <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Imię i Nazwisko</label>
-            <input type="text" placeholder="Jan Kowalski" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors" />
+            <input type="text" name="name" required placeholder="Jan Kowalski" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors" />
           </div>
           <div>
             <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Adres Email</label>
-            <input type="email" placeholder="jan@example.com" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors" />
+            <input type="email" name="email" required placeholder="jan@example.com" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors" />
           </div>
           <div>
             <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Wiadomość</label>
-            <textarea rows="4" placeholder="Opisz swoje zapytanie lub podaj termin eventu..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"></textarea>
+            <textarea name="message" rows="4" required placeholder="Opisz swoje zapytanie lub podaj termin eventu..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"></textarea>
           </div>
-          <button type="button" class="w-full bg-brand text-black font-bold py-3.5 rounded-xl hover:bg-brand-hover transition-colors uppercase tracking-wider">
+          <button type="submit" class="w-full bg-brand text-black font-bold py-3.5 rounded-xl hover:bg-brand-hover transition-colors uppercase tracking-wider">
             Wyślij Wiadomość
           </button>
         </form>
@@ -316,5 +317,6 @@
   <script>
     lucide.createIcons();
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
