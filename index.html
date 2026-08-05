@@ -38,6 +38,15 @@
       left: 0;
       z-index: -1;
     }
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-brand selection:text-black">
@@ -65,7 +74,7 @@
   </header>
   <main>
   <!-- Hero Section -->
-  <section class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+  <section class="relative w-full h-screen flex items-center justify-center overflow-hidden scroll-reveal" data-scroll-reveal>
     <!-- Video Background -->
     <video class="hero-video" autoplay loop muted playsinline poster="./img/hero_img.jpg">
       <source src="https://assets.mixkit.co/videos/preview/mixkit-off-road-quad-bike-in-the-mud-42358-large.mp4" type="video/mp4" />
@@ -93,7 +102,7 @@
   </section>
 
   <!-- Section: O nas -->
-  <section id="about" class="py-24 bg-zinc-900 border-t border-zinc-800">
+  <section id="about" class="py-24 bg-zinc-900 border-t border-zinc-800 scroll-reveal" data-scroll-reveal>
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
         <!-- Team Image -->
@@ -130,16 +139,16 @@
   </section>
 
   <!-- Section: Oferta -->
-  <section id="offer" class="py-24 bg-zinc-950 border-t border-zinc-900">
+  <section id="offer" class="py-24 bg-zinc-950 border-t border-zinc-900 scroll-reveal" data-scroll-reveal>
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal" data-scroll-reveal>
         <span class="text-brand font-bold uppercase tracking-widest text-sm">Co oferujemy</span>
         <h2 class="text-3xl md:text-4xl font-black uppercase mt-2 text-white">Przygotuj się na emocje</h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Card 1 -->
-        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-brand/50 transition-colors">
+        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-brand/50 transition-colors scroll-reveal" data-scroll-reveal>
           <div class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center text-brand mb-6">
             <i data-lucide="truck" class="w-6 h-6"></i>
           </div>
@@ -155,7 +164,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-brand/50 transition-colors">
+        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-brand/50 transition-colors scroll-reveal" data-scroll-reveal>
           <div class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center text-brand mb-6">
             <i data-lucide="party-popper" class="w-6 h-6"></i>
           </div>
@@ -171,7 +180,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-brand/50 transition-colors">
+        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-brand/50 transition-colors scroll-reveal" data-scroll-reveal>
           <div class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center text-brand mb-6">
             <i data-lucide="crosshair" class="w-6 h-6"></i>
           </div>
@@ -190,7 +199,7 @@
   </section>
 
   <!-- Section: Cennik -->
-  <section id="pricing" class="py-24 bg-zinc-900 border-t border-zinc-800">
+  <section id="pricing" class="py-24 bg-zinc-900 border-t border-zinc-800 scroll-reveal" data-scroll-reveal>
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-16">
         <span class="text-brand font-bold uppercase tracking-widest text-sm">Przejrzyste zasady</span>
@@ -234,7 +243,7 @@
   </section>
 
   <!-- Section: Kontakt -->
-  <section id="contact" class="py-24 bg-zinc-950 border-t border-zinc-900">
+  <section id="contact" class="py-24 bg-zinc-950 border-t border-zinc-900 scroll-reveal" data-scroll-reveal>
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16">
         <span class="text-brand font-bold uppercase tracking-widest text-sm">Napisz do nas</span>
@@ -252,6 +261,10 @@
           <div>
             <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Adres Email</label>
             <input type="email" name="email" required placeholder="jan@example.com" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Numer telefonu</label>
+            <input type="tel" name="phone" required pattern="[0-9\s\-]{8,15}" placeholder="123 456 789" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors" />
           </div>
           <div>
             <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Wiadomość</label>
@@ -277,7 +290,7 @@
       </div>
 
       <!-- Direct Contact Info Icons -->
-      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 pt-8 border-t border-zinc-800 text-sm font-semibold">
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 pt-8 border-t border-zinc-800 text-sm font-semibold scroll-reveal" data-scroll-reveal>
         <a href="tel:+48574272242" class="flex items-center gap-3 text-zinc-300 hover:text-brand transition-colors">
           <div class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-brand"><i data-lucide="phone" class="w-5 h-5"></i></div>
           +48 574 272 242

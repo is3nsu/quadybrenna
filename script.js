@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
+    initScrollReveal();
 });
 
 /* Obsługa formularza */
@@ -46,6 +47,24 @@ function initContactForm() {
   });
 }
 
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('[data-scroll-reveal]');
+  if (!revealElements.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('revealed');
+      obs.unobserve(entry.target);
+    });
+  }, {
+    rootMargin: '0px 0px -10% 0px',
+    threshold: 0.1,
+  });
+
+  revealElements.forEach((element) => observer.observe(element));
+}
+
 /* button status */
 
 function setButtonLoading(button, isLoading, originalText = '') {
@@ -59,6 +78,8 @@ function setButtonLoading(button, isLoading, originalText = '') {
     button.classList.remove('opacity-75', 'cursor-not-allowed');
   }
 }
+
+/* powiadomienie wysłania */ 
 
 function showNotification(message, type = 'success') {
   alert(message);
