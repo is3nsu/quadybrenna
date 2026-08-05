@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wypożyczalnia Quadów & Eventy</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .hero-video {
+      object-fit: cover;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-amber-500 selection:text-black">
+
+  <!-- Fixed Topbar Navigation -->
+  <header class="fixed top-0 left-0 w-full bg-zinc-950/80 backdrop-blur-md z-50 border-b border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="text-xl font-black tracking-wider uppercase flex items-center gap-2 text-amber-500">
+        <i data-lucide="compass" class="w-7 h-7"></i> QUAD-VENTURE
+      </a>
+      <nav class="hidden md:flex gap-8 text-sm font-semibold tracking-wide uppercase">
+        <a href="#about" class="hover:text-amber-500 transition-colors">O nas</a>
+        <a href="#offer" class="hover:text-amber-500 transition-colors">Oferta</a>
+        <a href="#pricing" class="hover:text-amber-500 transition-colors">Cennik</a>
+        <a href="#contact" class="hover:text-amber-500 transition-colors">Kontakt</a>
+      </nav>
+      <a href="#contact" class="bg-amber-500 text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-amber-400 transition-colors shadow-lg shadow-amber-500/20">
+        Rezerwuj
+      </a>
+    <!-- Dark Overlay -->
+    </div>
+  </header>
+
+    <!-- Dark Overlay -->
+  <!-- Hero Section -->https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1920&q=80
+  <section class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <!-- Video Background -->
+    <video class="hero-video" autoplay loop muted playsinline poster="./img/hero_img.jpg">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-off-road-quad-bike-in-the-mud-42358-large.mp4" type="video/mp4" />
+    </video>
+    
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/70 backdrop-brightness-75"></div>
+
+    <!-- Fullscreen Hero Logo & Content -->
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
+      <div class="inline-flex items-center justify-center p-4 bg-amber-500/10 rounded-full mb-6 border border-amber-500/30">
+        <i data-lucide="flame" class="w-16 h-16 text-amber-500 animate-pulse"></i>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tight text-white mb-4 drop-shadow-md">
+        QUAD-VENTURE
+      </h1>
+      <p class="text-lg md:text-2xl text-zinc-300 font-light max-w-2xl uppercase tracking-widest mb-8">
+        Ekstremalne wyprawy • Wieczory Kawalerskie • Strzelnica ASG
+      </p>
+      <a href="#offer" class="inline-flex items-center gap-2 bg-amber-500 text-black font-bold px-8 py-4 rounded-xl hover:bg-amber-400 transition-all uppercase tracking-wider shadow-lg shadow-amber-500/30">
+        Zobacz Ofertę <i data-lucide="arrow-down" class="w-5 h-5"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Section: O nas -->
+  <section id="about" class="py-24 bg-zinc-900 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <!-- Team Image -->
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+          <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=800&q=80" alt="Ekipa quadowa" class="relative rounded-2xl w-full h-[400px] object-cover shadow-2xl" />
+        </div>
+        <!-- Description -->
+        <div>
+          <span class="text-amber-500 font-bold uppercase tracking-widest text-sm">Poznaj nas</span>
+          <h2 class="text-3xl md:text-4xl font-black uppercase mt-2 mb-6 text-white">Pasja, błoto i adrenalina</h2>
+          <p class="text-zinc-400 leading-relaxed mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </div>
+
+      <!-- Carousel / Gallery -->
+      <div class="mt-12">
+        <h3 class="text-xl font-bold uppercase tracking-wider mb-6 text-zinc-300 flex items-center gap-2">
+          <i data-lucide="camera" class="text-amber-500"></i> Zdjęcia z naszych wypadów
+        </h3>
+        <div class="flex gap-6 overflow-x-auto pb-6 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-zinc-800">
+          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" alt="Wypad 1" class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300" />
+          <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=500&q=80" alt="Wypad 2" class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300" />
+          <img src="https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=500&q=80" alt="Wypad 3" class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300" />
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=500&q=80" alt="Wypad 4" class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Oferta -->
+  <section id="offer" class="py-24 bg-zinc-950 border-t border-zinc-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-amber-500 font-bold uppercase tracking-widest text-sm">Co oferujemy</span>
+        <h2 class="text-3xl md:text-4xl font-black uppercase mt-2 text-white">Przygotuj się na emocje</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-amber-500/50 transition-colors">
+          <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 mb-6">
+            <i data-lucide="truck" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold uppercase mb-3 text-white">Wypożyczalnia Quadów</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+            Nowoczesna flota maszyn gotowych na najtrudniejszy teren.
+          </p>
+          <ul class="text-xs text-zinc-300 space-y-2 border-t border-zinc-800 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-500"></i> Yamaha Grizzly 700 4x4</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-500"></i> Can-Am Outlander 1000</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-500"></i> Polaris Sportsman 570</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-amber-500/50 transition-colors">
+          <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 mb-6">
+            <i data-lucide="party-popper" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold uppercase mb-3 text-white">Imprezy Kawalerskie</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+            Niezapomniane pożegnanie wolności w terenie z pełną organizacją.
+          </p>
+          <ul class="text-xs text-zinc-300 space-y-2 border-t border-zinc-800 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-500"></i> Dedykowany instruktor & Przewodnik</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-500"></i> Ognisko z cateringiem</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-500"></i> Pakiety zdjęć i wideo z drona</li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-amber-500/50 transition-colors">
+          <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 mb-6">
+            <i data-lucide="crosshair" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold uppercase mb-3 text-white">Strzelnica ASG</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+            Rywalizacja taktyczna na przygotowanym torze przeszkód.
+          </p>
+          <ul class="text-xs text-zinc-300 space-y-2 border-t border-zinc-800 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-500"></i> Repliki broni palnej (M4, AK-47)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-500"></i> Scenariusze bojowe i cele reaktywne</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-500"></i> Pełny sprzęt ochronny w cenie</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Cennik -->
+  <section id="pricing" class="py-24 bg-zinc-900 border-t border-zinc-800">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-amber-500 font-bold uppercase tracking-widest text-sm">Przejrzyste zasady</span>
+        <h2 class="text-3xl md:text-4xl font-black uppercase mt-2 text-white">Cennik usług</h2>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-zinc-800 shadow-xl bg-zinc-950">
+        <table class="w-full text-left text-sm text-zinc-300">
+          <thead class="bg-zinc-800/50 text-amber-500 uppercase text-xs tracking-wider">
+            <tr>
+              <th scope="col" class="px-6 py-4">Usługa / Pakiet</th>
+              <th scope="col" class="px-6 py-4">Czas trwania</th>
+              <th scope="col" class="px-6 py-4">Cena</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-zinc-800">
+            <tr class="hover:bg-zinc-900/50 transition-colors">
+              <td class="px-6 py-4 font-semibold text-white">Wynajem Quada (Jazda swobodna)</td>
+              <td class="px-6 py-4">1 godzina</td>
+              <td class="px-6 py-4 text-amber-500 font-bold">250 PLN</td>
+            </tr>
+            <tr class="hover:bg-zinc-900/50 transition-colors">
+              <td class="px-6 py-4 font-semibold text-white">Wyprawa z przewodnikiem (Off-road)</td>
+              <td class="px-6 py-4">2 godziny</td>
+              <td class="px-6 py-4 text-amber-500 font-bold">450 PLN</td>
+            </tr>
+            <tr class="hover:bg-zinc-900/50 transition-colors">
+              <td class="px-6 py-4 font-semibold text-white">Pakiet Kawalerski "VIP Extreme"</td>
+              <td class="px-6 py-4">Cały dzień (~6h)</td>
+              <td class="px-6 py-4 text-amber-500 font-bold">1800 PLN / grupa</td>
+            </tr>
+            <tr class="hover:bg-zinc-900/50 transition-colors">
+              <td class="px-6 py-4 font-semibold text-white">Sesja na strzelnicy ASG</td>
+              <td class="px-6 py-4">1.5 godziny</td>
+              <td class="px-6 py-4 text-amber-500 font-bold">120 PLN / osoba</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Kontakt -->
+  <section id="contact" class="py-24 bg-zinc-950 border-t border-zinc-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-amber-500 font-bold uppercase tracking-widest text-sm">Napisz do nas</span>
+        <h2 class="text-3xl md:text-4xl font-black uppercase mt-2 text-white">Skontaktuj się</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 mb-16">
+        <!-- Contact Form -->
+        <form class="space-y-6 bg-zinc-900 p-8 rounded-2xl border border-zinc-800">
+          <div>
+            <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Imię i Nazwisko</label>
+            <input type="text" placeholder="Jan Kowalski" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Adres Email</label>
+            <input type="email" placeholder="jan@example.com" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" />
+          </div>
+          <div>
+            <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Wiadomość</label>
+            <textarea rows="4" placeholder="Opisz swoje zapytanie lub podaj termin eventu..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors"></textarea>
+          </div>
+          <button type="button" class="w-full bg-amber-500 text-black font-bold py-3.5 rounded-xl hover:bg-amber-400 transition-colors uppercase tracking-wider">
+            Wyślij Wiadomość
+          </button>
+        </form>
+
+        <!-- Map Placeholder -->
+        <div class="h-full min-h-[300px] bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden relative flex items-center justify-center">
+          <iframe 
+            title="Google Map" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15301.272102142274!2d19.0237815!3d50.2648919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce349b1e422f%3A0xd6c5b9f71c1f5125!2sKatowice!5e0!3m2!1spl!2spl!4v1680000000000!5m2!1spl!2spl" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Direct Contact Info Icons -->
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 pt-8 border-t border-zinc-800 text-sm font-semibold">
+        <a href="tel:+48123456789" class="flex items-center gap-3 text-zinc-300 hover:text-amber-500 transition-colors">
+          <div class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-amber-500"><i data-lucide="phone" class="w-5 h-5"></i></div>
+          +48 123 456 789
+        </a>
+        <a href="mailto:kontakt@quadventure.pl" class="flex items-center gap-3 text-zinc-300 hover:text-amber-500 transition-colors">
+          <div class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-amber-500"><i data-lucide="mail" class="w-5 h-5"></i></div>
+          kontakt@quadventure.pl
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-zinc-300 hover:text-amber-500 transition-colors">
+          <div class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-amber-500"><i data-lucide="facebook" class="w-5 h-5"></i></div>
+          Facebook
+        </a>
+        <a href="https://wa.me/48123456789" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-zinc-300 hover:text-amber-500 transition-colors">
+          <div class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-amber-500"><i data-lucide="message-circle" class="w-5 h-5"></i></div>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-zinc-950 py-8 border-t border-zinc-900">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+      <p>&copy; 2026 QUAD-VENTURE. Wszelkie prawa zastrzeżone.</p>
+      <p class="text-[11px] text-zinc-600">
+        Projekt i wykonanie strony: <a href="#" class="text-zinc-400 hover:underline">Twoje Imię / Nazwa Studia</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Script for Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
