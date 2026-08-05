@@ -195,7 +195,79 @@
           </ul>
         </div>
       </div>
+          <!-- Subsection: Wybór modelu quada ze specyfikacją -->
+<div class="mt-20 pt-16 border-t border-zinc-900 reveal">
+  <div class="text-center max-w-xl mx-auto mb-10">
+    <span class="text-brand font-bold uppercase tracking-widest text-xs">Nasza Flota</span>
+    <h3 class="text-2xl md:text-3xl font-black uppercase mt-1 text-white">Poznaj nasze maszyny</h3>
+  </div>
+
+  <!-- Menu wyboru modelu (Przycisk / Tab) -->
+  <div class="flex flex-wrap justify-center gap-3 mb-10" id="quad-selector-buttons">
+    <button 
+      type="button" 
+      data-quad-key="q1" 
+      class="quad-tab-btn active px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-brand text-black shadow-lg shadow-brand/20">
+      Quad 1
+    </button>
+    <button 
+      type="button" 
+      data-quad-key="q2" 
+      class="quad-tab-btn px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800">
+      Quad 2
+    </button>
+    <button 
+      type="button" 
+      data-quad-key="q3" 
+      class="quad-tab-btn px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800">
+      Quad 3
+    </button>
+  </div>
+
+  <!-- Karta z podglądem wybranego Quada -->
+  <div class="bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl grid md:grid-cols-2 gap-0 items-center">
+    
+    <!-- Zdjęcie Quada -->
+    <div class="relative h-64 md:h-full min-h-[320px] bg-zinc-950 overflow-hidden">
+      <img 
+        id="quad-display-image" 
+        src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" 
+        alt="Quad" 
+        class="w-full h-full absolute inset-0 object-cover transition-all duration-500"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent md:hidden"></div>
     </div>
+
+    <!-- Dane i Tabela Specyfikacji -->
+    <div class="p-6 md:p-10">
+      <div class="flex items-center justify-between mb-4">
+        <h4 id="quad-display-title" class="text-2xl font-black uppercase text-white">Yamaha Grizzly 700</h4>
+        <span id="quad-display-badge" class="px-3 py-1 bg-brand/10 border border-brand/30 text-brand text-xs font-bold rounded-full uppercase">Top Wyprawowy</span>
+      </div>
+
+      <p id="quad-display-desc" class="text-zinc-400 text-sm mb-6 leading-relaxed">
+        Niezwykle zwinny i wszechstronny pojazd stworzony do pokonywania najtrudniejszych szlaków górskich i błotnistych przeszkód.
+      </p>
+
+      <!-- Tabela specyfikacji -->
+      <div class="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 mb-6">
+        <table class="w-full text-left text-xs text-zinc-300">
+          <tbody id="quad-display-specs" class="divide-y divide-zinc-800">
+            <!-- Wypełniane dynamicznie przez JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <a href="#contact" class="inline-flex items-center justify-center w-full bg-brand text-black font-bold py-3 rounded-xl hover:bg-brand-hover transition-colors uppercase text-xs tracking-wider gap-2">
+        Zapytaj o dostępność <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+
+  </div>
+</div>
+    </div>  
+
+
   </section>
 
   <!-- Section: Cennik -->
