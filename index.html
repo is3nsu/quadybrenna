@@ -1,407 +1,800 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Wypożyczalnia quadów w Brennej - wyprawy off-road, wynajem quadów, organizacja i obsługa imprez, strzelnica ASG. Zarezerwuj przygodę już dziś." />
-  <title>Wypożyczalnia Quadów Brenna</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          brand: {
-            DEFAULT: '#FFC80B',      
-            hover: '#E0AE00',         
-            dark: '#111827',          
-            green: '#88C425',         
-          }
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Wypożyczalnia quadów w Brennej - wyprawy off-road, wynajem quadów, organizacja i obsługa imprez, strzelnica ASG. Zarezerwuj przygodę już dziś."
+    />
+    <title>Wypożyczalnia Quadów Brenna</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                DEFAULT: "#FFC80B",
+                hover: "#E0AE00",
+                dark: "#111827",
+                green: "#88C425",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
       }
-    }
-  }
-</script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    .hero-video {
-      object-fit: cover;
-      width: 100%;
-      height: 100vh;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .scroll-reveal.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-</head>
-<body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-brand selection:text-black">
-
-  <!-- Fixed Topbar Navigation -->
-  <header class="fixed top-0 left-0 w-full bg-zinc-950/80 backdrop-blur-md z-50 border-b border-zinc-800/80">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="text-xl font-black tracking-wider uppercase flex items-center gap-2 text-brand">
-        <img 
-        class="object-contain h-10 w-auto" 
-        src="./img/logo.jpg" 
-        alt="Logo Wypożyczalnia Quadów Brenna">
-      </a>
-      <nav aria-label="Główne menu" class="hidden md:flex gap-8 text-sm font-semibold tracking-wide uppercase">
-        <a href="#about" class="hover:text-brand transition-colors">O nas</a>
-        <a href="#offer" class="hover:text-brand transition-colors">Oferta</a>
-        <a href="#pricing" class="hover:text-brand transition-colors">Cennik</a>
-        <a href="#contact" class="hover:text-brand transition-colors">Kontakt</a>
-      </nav>
-      <a href="#contact" class="bg-brand text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-brand-hover transition-colors shadow-lg shadow-amber-500/20">
-        Rezerwuj
-      </a>
-    <!-- Dark Overlay -->
-    </div>
-  </header>
-  <main>
-  <!-- Hero Section -->
-  <section class="relative w-full h-screen flex items-center justify-center overflow-hidden scroll-reveal" data-scroll-reveal>
-    <!-- Video Background -->
-    <video class="hero-video" autoplay loop muted playsinline poster="./img/hero_img.jpg">
-      <source src="https://assets.mixkit.co/videos/preview/mixkit-off-road-quad-bike-in-the-mud-42358-large.mp4" type="video/mp4" />
-      Twoja przeglądarka nie obsługuje odtwarzania wideo.
-    </video>
-    
-    <!-- Dark Overlay -->
-    <div class="absolute inset-0 bg-black/70 backdrop-brightness-75"></div>
-
-    <!-- Fullscreen Hero Logo & Content -->
-    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
-      <div class="inline-flex items-center justify-center p-4 mb-6">
-        <img src="./img/logo.jpg" alt="Logo Wypożyczalnia Quadów Brenna" class="h-32 w-auto">
-      </div>
-      <h1 class="text-[clamp(2.5rem,8vw,6rem)] font-black uppercase tracking-tighter text-white mb-4 drop-shadow-lg leading-none">
-        WYPOŻYCZALNIA QUADÓW BRENNA
-      </h1>
-      <p class="text-lg md:text-2xl text-zinc-300 font-light max-w-2xl uppercase tracking-widest mb-8">
-        Ekstremalne wyprawy • Wieczory Kawalerskie • Strzelnica ASG
-      </p>
-      <a href="#offer" class="inline-flex items-center gap-2 bg-brand text-black font-bold px-8 py-4 rounded-xl hover:bg-brand-hover transition-all uppercase tracking-wider shadow-lg shadow-amber-500/30">
-        Zobacz Ofertę <i data-lucide="arrow-down" class="w-5 h-5" aria-hidden="true"></i>
-      </a>
-    </div>
-  </section>
-
-  <!-- Section: O nas -->
-  <section id="about" class="py-24 bg-zinc-900 border-t border-zinc-800 scroll-reveal" data-scroll-reveal>
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-        <!-- Team Image -->
-        <div class="relative group">
-          <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-          <img src="./img/about.png" alt="Ekipa quadowa" class="relative rounded-2xl w-full h-[400px] object-cover shadow-2xl" />
-        </div>
-        <!-- Description -->
-        <div>
-          <span class="text-brand font-bold uppercase tracking-widest text-sm">Poznaj nas</span>
-          <h2 class="text-3xl md:text-4xl font-black uppercase mt-2 mb-6 text-white">Pasja, błoto i adrenalina</h2>
-          <p class="text-zinc-400 leading-relaxed mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
-          <p class="text-zinc-400 leading-relaxed">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </div>
-      </div>
-
-      <!-- Carousel / Gallery -->
-      <div class="mt-12">
-        <h3 class="text-xl font-bold uppercase tracking-wider mb-6 text-zinc-300 flex items-center gap-2">
-          <i data-lucide="camera" class="text-brand"></i> Zdjęcia z naszych wypadów
-        </h3>
-        <div class="flex gap-6 overflow-x-auto pb-6 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-zinc-800">
-          <img src="./img/c1.png" alt="Wypad 1" class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300" />
-          <img src="./img/c2.png" alt="Wypad 2" class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300" />
-          <img src="./img/c3.png" alt="Wypad 3" class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300" />
-          <img src="./img/c4.png" alt="Wypad 4" class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Oferta -->
-  <section id="offer" class="py-24 bg-zinc-950 border-t border-zinc-900 scroll-reveal" data-scroll-reveal>
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal" data-scroll-reveal>
-        <span class="text-brand font-bold uppercase tracking-widest text-sm">Co oferujemy</span>
-        <h2 class="text-3xl md:text-4xl font-black uppercase mt-2 text-white">Przygotuj się na emocje</h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-brand/50 transition-colors scroll-reveal" data-scroll-reveal>
-          <div class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center text-brand mb-6">
-            <i data-lucide="truck" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-xl font-bold uppercase mb-3 text-white">Wypożyczalnia Quadów</h3>
-          <p class="text-zinc-400 text-sm leading-relaxed mb-4">
-            Nowoczesna flota maszyn gotowych na najtrudniejszy teren.
-          </p>
-          <ul class="text-xs text-zinc-300 space-y-2 border-t border-zinc-800 pt-4">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Polaris 570</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Quad 2</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Quad 3</li>
-          </ul>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-brand/50 transition-colors scroll-reveal" data-scroll-reveal>
-          <div class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center text-brand mb-6">
-            <i data-lucide="party-popper" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-xl font-bold uppercase mb-3 text-white">Obsługa imprez</h3>
-          <p class="text-zinc-400 text-sm leading-relaxed mb-4">
-            Niezapomniane pożegnanie wolności w terenie z pełną organizacją.
-          </p>
-          <ul class="text-xs text-zinc-300 space-y-2 border-t border-zinc-800 pt-4">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Dedykowany instruktor & Przewodnik</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Kiełbasa z grilla</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Pakiety zdjęć i wideo</li>
-          </ul>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-brand/50 transition-colors scroll-reveal" data-scroll-reveal>
-          <div class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center text-brand mb-6">
-            <i data-lucide="crosshair" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-xl font-bold uppercase mb-3 text-white">Mobilna strzelnica ASG</h3>
-          <p class="text-zinc-400 text-sm leading-relaxed mb-4">
-            Rywalizacja na mobilnej strzelnicy z replikami ASG.
-          </p>
-          <ul class="text-xs text-zinc-300 space-y-2 border-t border-zinc-800 pt-4">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Repliki broni palnej (M4, AK-47)</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Pakiet kulek+</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand"></i> Pełny sprzęt ochronny w cenie</li>
-          </ul>
-        </div>
-      </div>
-          <!-- Subsection: Wybór modelu quada ze specyfikacją -->
-<div class="mt-20 pt-16 border-t border-zinc-900 reveal">
-  <div class="text-center max-w-xl mx-auto mb-10">
-    <span class="text-brand font-bold uppercase tracking-widest text-xs">Nasza Flota</span>
-    <h3 class="text-2xl md:text-3xl font-black uppercase mt-1 text-white">Poznaj nasze maszyny</h3>
-  </div>
-
-  <!-- Menu wyboru modelu (Przycisk / Tab) -->
-  <div class="flex flex-wrap justify-center gap-3 mb-10" id="quad-selector-buttons">
-    <button 
-      type="button" 
-      data-quad-key="q1" 
-      class="quad-tab-btn active px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-brand text-black shadow-lg shadow-brand/20">
-      Quad 1
-    </button>
-    <button 
-      type="button" 
-      data-quad-key="q2" 
-      class="quad-tab-btn px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800">
-      Quad 2
-    </button>
-    <button 
-      type="button" 
-      data-quad-key="q3" 
-      class="quad-tab-btn px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800">
-      Quad 3
-    </button>
-  </div>
-
-  <!-- Karta z podglądem wybranego Quada -->
-  <div class="bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl grid md:grid-cols-2 gap-0 items-center">
-    
-    <!-- Zdjęcie Quada -->
-    <div class="relative h-64 md:h-full min-h-[320px] bg-zinc-950 overflow-hidden">
-      <img 
-        id="quad-display-image" 
-        src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" 
-        alt="Quad" 
-        class="w-full h-full absolute inset-0 object-cover transition-all duration-500"
-      />
-      <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent md:hidden"></div>
-    </div>
-
-    <!-- Dane i Tabela Specyfikacji -->
-    <div class="p-6 md:p-10">
-      <div class="flex items-center justify-between mb-4">
-        <h4 id="quad-display-title" class="text-2xl font-black uppercase text-white">Yamaha Grizzly 700</h4>
-        <span id="quad-display-badge" class="px-3 py-1 bg-brand/10 border border-brand/30 text-brand text-xs font-bold rounded-full uppercase">Top Wyprawowy</span>
-      </div>
-
-      <p id="quad-display-desc" class="text-zinc-400 text-sm mb-6 leading-relaxed">
-        Niezwykle zwinny i wszechstronny pojazd stworzony do pokonywania najtrudniejszych szlaków górskich i błotnistych przeszkód.
-      </p>
-
-      <!-- Tabela specyfikacji -->
-      <div class="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 mb-6">
-        <table class="w-full text-left text-xs text-zinc-300">
-          <tbody id="quad-display-specs" class="divide-y divide-zinc-800">
-            <!-- Wypełniane dynamicznie przez JS -->
-          </tbody>
-        </table>
-      </div>
-
-      <a href="#contact" class="inline-flex items-center justify-center w-full bg-brand text-black font-bold py-3 rounded-xl hover:bg-brand-hover transition-colors uppercase text-xs tracking-wider gap-2">
-        Zapytaj o dostępność <i data-lucide="arrow-right" class="w-4 h-4"></i>
-      </a>
-    </div>
-
-  </div>
-</div>
-    </div>  
-
-
-  </section>
-
-  <!-- Section: Cennik -->
-  <section id="pricing" class="py-24 bg-zinc-900 border-t border-zinc-800 scroll-reveal" data-scroll-reveal>
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <span class="text-brand font-bold uppercase tracking-widest text-sm">Przejrzyste zasady</span>
-        <h2 class="text-3xl md:text-4xl font-black uppercase mt-2 text-white">Cennik usług</h2>
-      </div>
-
-      <div class="overflow-x-auto rounded-2xl border border-zinc-800 shadow-xl bg-zinc-950">
-        <table class="w-full text-left text-sm text-zinc-300">
-          <thead class="bg-zinc-800/50 text-brand uppercase text-xs tracking-wider">
-            <tr>
-              <th scope="col" class="px-6 py-4">Usługa / Pakiet</th>
-              <th scope="col" class="px-6 py-4">Czas trwania</th>
-              <th scope="col" class="px-6 py-4">Cena</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-zinc-800">
-            <tr class="hover:bg-zinc-900/50 transition-colors">
-              <td class="px-6 py-4 font-semibold text-white">Wynajem Quada (Jazda swobodna)</td>
-              <td class="px-6 py-4">1 godzina</td>
-              <td class="px-6 py-4 text-brand font-bold">250 PLN</td>
-            </tr>
-            <tr class="hover:bg-zinc-900/50 transition-colors">
-              <td class="px-6 py-4 font-semibold text-white">Wyprawa z przewodnikiem (Off-road)</td>
-              <td class="px-6 py-4">2 godziny</td>
-              <td class="px-6 py-4 text-brand font-bold">450 PLN</td>
-            </tr>
-            <tr class="hover:bg-zinc-900/50 transition-colors">
-              <td class="px-6 py-4 font-semibold text-white">Pakiet Kawalerski "VIP Extreme"</td>
-              <td class="px-6 py-4">Cały dzień (~6h)</td>
-              <td class="px-6 py-4 text-brand font-bold">1800 PLN / grupa</td>
-            </tr>
-            <tr class="hover:bg-zinc-900/50 transition-colors">
-              <td class="px-6 py-4 font-semibold text-white">Sesja na strzelnicy ASG</td>
-              <td class="px-6 py-4">1.5 godziny</td>
-              <td class="px-6 py-4 text-brand font-bold">120 PLN / osoba</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Kontakt -->
-  <section id="contact" class="py-24 bg-zinc-950 border-t border-zinc-900 scroll-reveal" data-scroll-reveal>
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <span class="text-brand font-bold uppercase tracking-widest text-sm">Napisz do nas</span>
-        <h2 class="text-3xl md:text-4xl font-black uppercase mt-2 text-white">Skontaktuj się</h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-12 mb-16">
-        <!-- Contact Form -->
-        <form id="contact-form" action="https://formsubmit.co/ajax/sensuqq@pm.me" method="POST" class="space-y-6 bg-zinc-900 p-8 rounded-2xl border border-zinc-800">
-            <input type="hidden" name="_captcha" value="false">
-          <div>
-            <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Imię i Nazwisko</label>
-            <input type="text" name="name" required placeholder="Jan Kowalski" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors" />
-          </div>
-          <div>
-            <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Adres Email</label>
-            <input type="email" name="email" required placeholder="jan@example.com" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors" />
-          </div>
-          <div>
-            <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Numer telefonu</label>
-            <input type="tel" name="phone" required pattern="[0-9\s\-]{8,15}" placeholder="123 456 789" class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors" />
-          </div>
-          <div>
-            <label class="block text-xs uppercase font-bold text-zinc-400 mb-2">Wiadomość</label>
-            <textarea name="message" rows="4" required placeholder="Opisz swoje zapytanie lub podaj termin eventu..." class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"></textarea>
-          </div>
-          <button type="submit" class="w-full bg-brand text-black font-bold py-3.5 rounded-xl hover:bg-brand-hover transition-colors uppercase tracking-wider">
-            Wyślij Wiadomość
-          </button>
-        </form>
-
-        <!-- Map Placeholder -->
-        <div class="h-full min-h-[300px] bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden relative flex items-center justify-center">
-          <iframe 
-            title="Google Map" 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2581.3214148786988!2d18.910679269311515!3d49.68591981737773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47141f85e7a1e5c3%3A0xb540faa81dd415f3!2sWypo%C5%BCyczalnia%20quad%C3%B3w%20Brenna!5e0!3m2!1spl!2spl!4v1785934126877!5m2!1spl!2spl"
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-          </iframe>
-        </div>
-      </div>
-
-      <!-- Direct Contact Info Icons -->
-      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 pt-8 border-t border-zinc-800 text-sm font-semibold scroll-reveal" data-scroll-reveal>
-        <a href="tel:+48574272242" class="flex items-center gap-3 text-zinc-300 hover:text-brand transition-colors">
-          <div class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-brand"><i data-lucide="phone" class="w-5 h-5"></i></div>
-          +48 574 272 242
+      .hero-video {
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-brand selection:text-black"
+  >
+    <!-- Fixed Topbar Navigation -->
+    <header
+      class="fixed top-0 left-0 w-full bg-zinc-950/80 backdrop-blur-md z-50 border-b border-zinc-800/80"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <a
+          href="#"
+          class="text-xl font-black tracking-wider uppercase flex items-center gap-2 text-brand"
+        >
+          <img
+            class="object-contain h-10 w-auto"
+            src="./img/logo.jpg"
+            alt="Logo Wypożyczalnia Quadów Brenna"
+          />
         </a>
-        <a href="mailto:quadybrenna@gmail.com" class="flex items-center gap-3 text-zinc-300 hover:text-brand transition-colors">
-          <div class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-brand"><i data-lucide="mail" class="w-5 h-5"></i></div>
-          quadybrenna@gmail.com
+        <nav
+          aria-label="Główne menu"
+          class="hidden md:flex gap-8 text-sm font-semibold tracking-wide uppercase"
+        >
+          <a href="#about" class="hover:text-brand transition-colors">O nas</a>
+          <a href="#offer" class="hover:text-brand transition-colors">Oferta</a>
+          <a href="#pricing" class="hover:text-brand transition-colors"
+            >Cennik</a
+          >
+          <a href="#contact" class="hover:text-brand transition-colors"
+            >Kontakt</a
+          >
+        </nav>
+        <a
+          href="#contact"
+          class="bg-brand text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-brand-hover transition-colors shadow-lg shadow-amber-500/20"
+        >
+          Rezerwuj
         </a>
-        <a href="https://www.facebook.com/WypozyczalniaQuadowBrenna" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-zinc-300 hover:text-brand transition-colors">
-          <div class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-brand"><i data-lucide="book-user" class="w-5 h-5"></i></div>
-          Facebook
-        </a>
-        <a href="https://www.instagram.com/quady_brenna/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-zinc-300 hover:text-brand transition-colors">
-          <div class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-brand"><i data-lucide="camera" class="w-5 h-5"></i></div>
-          Instagram
-        </a>
-        <a href="https://wa.me/48574272242" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-zinc-300 hover:text-brand transition-colors">
-          <div class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-brand"><i data-lucide="message-circle" class="w-5 h-5"></i></div>
-          WhatsApp
-        </a>
+        <!-- Dark Overlay -->
       </div>
-    </div>
-  </section>
-  </main>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="relative w-full h-screen flex items-center justify-center overflow-hidden scroll-reveal"
+        data-scroll-reveal
+      >
+        <!-- Video Background -->
+        <video
+          class="hero-video"
+          autoplay
+          loop
+          muted
+          playsinline
+          poster="./img/hero_img.jpg"
+        >
+          <source
+            src="https://assets.mixkit.co/videos/preview/mixkit-off-road-quad-bike-in-the-mud-42358-large.mp4"
+            type="video/mp4"
+          />
+          Twoja przeglądarka nie obsługuje odtwarzania wideo.
+        </video>
 
-  <!-- Footer -->
-  <footer class="bg-zinc-950 py-8 border-t border-zinc-900">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
-      <p>&copy; 2026 Wypożyczalnia Quadów Brenna. Wszelkie prawa zastrzeżone.</p>
-      <p class="text-[11px] text-zinc-600">
-        Projekt i wykonanie strony: <a href="#" class="text-zinc-400 hover:underline">p.nakraszewicz@pm.me</a>
-      </p>
-    </div>
-  </footer>
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black/70 backdrop-brightness-75"></div>
 
-  <!-- Script for Icons -->
-  <script>
-    lucide.createIcons();
-  </script>
-  <script src="script.js"></script>
-</body>
+        <!-- Fullscreen Hero Logo & Content -->
+        <div
+          class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center"
+        >
+          <div class="inline-flex items-center justify-center p-4 mb-6">
+            <img
+              src="./img/logo.jpg"
+              alt="Logo Wypożyczalnia Quadów Brenna"
+              class="h-80 w-auto"
+            />
+          </div>
+          <p
+            class="text-lg md:text-2xl text-zinc-300 font-light max-w-2xl uppercase tracking-widest mb-8"
+          >
+            Ekstremalne wyprawy • Organizacja Imprez • Strzelnica ASG
+          </p>
+          <a
+            href="#offer"
+            class="inline-flex items-center gap-2 bg-brand text-black font-bold px-8 py-4 rounded-xl hover:bg-brand-hover transition-all uppercase tracking-wider shadow-lg shadow-amber-500/30"
+          >
+            Zobacz Ofertę
+            <i data-lucide="arrow-down" class="w-5 h-5" aria-hidden="true"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section: O nas -->
+      <section
+        id="about"
+        class="py-24 bg-zinc-900 border-t border-zinc-800 scroll-reveal"
+        data-scroll-reveal
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <!-- Team Image -->
+            <div class="relative group">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"
+              ></div>
+              <img
+                src="./img/about.png"
+                alt="Ekipa quadowa"
+                class="relative rounded-2xl w-full h-[400px] object-cover shadow-2xl"
+              />
+            </div>
+            <!-- Description -->
+            <div>
+              <span
+                class="text-brand font-bold uppercase tracking-widest text-sm"
+                >Poznaj nas</span
+              >
+              <h2
+                class="text-3xl md:text-4xl font-black uppercase mt-2 mb-6 text-white"
+              >
+                Pasja, błoto i adrenalina
+              </h2>
+              <p class="text-zinc-400 leading-relaxed mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <p class="text-zinc-400 leading-relaxed">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+
+          <!-- Carousel / Gallery -->
+          <div class="mt-12">
+            <h3
+              class="text-xl font-bold uppercase tracking-wider mb-6 text-zinc-300 flex items-center gap-2"
+            >
+              <i data-lucide="camera" class="text-brand"></i> Zdjęcia z naszych
+              wypadów
+            </h3>
+            <div
+              class="flex gap-6 overflow-x-auto pb-6 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-zinc-800"
+            >
+              <img
+                src="./img/c1.png"
+                alt="Wypad 1"
+                class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300"
+              />
+              <img
+                src="./img/c2.png"
+                alt="Wypad 2"
+                class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300"
+              />
+              <img
+                src="./img/c3.png"
+                alt="Wypad 3"
+                class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300"
+              />
+              <img
+                src="./img/c4.png"
+                alt="Wypad 4"
+                class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sekcja Opinie z Google -->
+      <section
+        id="reviews"
+        class="py-20 bg-zinc-950 border-t border-zinc-900 reveal scroll-reveal"
+        data-scroll-reveal=""
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <!-- Nagłówek sekcji -->
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+          >
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <!-- Gwiazdki i logo Google -->
+                <div class="flex text-amber-400">
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                </div>
+                <span class="text-white font-bold text-sm">5.0 / 5.0</span>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-black uppercase text-white">
+                Co mówią o nas klienci
+              </h3>
+              <p class="text-zinc-400 text-sm mt-1">
+                Zweryfikowane opinie z Wizytówki Google
+              </p>
+            </div>
+
+            <!-- Przyciski nawigacji karuzeli -->
+            <div class="flex items-center gap-3">
+              <button
+                id="prev-review-btn"
+                aria-label="Poprzednia opinia"
+                class="p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-brand transition-colors"
+              >
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+              </button>
+              <button
+                id="next-review-btn"
+                aria-label="Następna opinia"
+                class="p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:border-brand transition-colors"
+              >
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Kontener Karuzeli -->
+          <div class="overflow-hidden" id="reviews-carousel-container">
+            <!-- Dynamicznie wypełniane z pliku JSON -->
+            <div
+              id="reviews-track"
+              class="flex transition-transform duration-500 ease-out gap-6"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Oferta -->
+      <section
+        id="offer"
+        class="py-24 bg-zinc-900 border-t border-zinc-800 scroll-reveal"
+        data-scroll-reveal
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <div
+            class="text-center max-w-2xl mx-auto mb-16 scroll-reveal"
+            data-scroll-reveal
+          >
+            <span class="text-brand font-bold uppercase tracking-widest text-sm"
+              >Co oferujemy</span
+            >
+            <h2
+              class="text-3xl md:text-4xl font-black uppercase mt-2 text-white"
+            >
+              Przygotuj się na emocje
+            </h2>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div
+              class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-brand/50 transition-colors scroll-reveal"
+              data-scroll-reveal
+            >
+              <div
+                class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center text-brand mb-6"
+              >
+                <i data-lucide="truck" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold uppercase mb-3 text-white">
+                Wypożyczalnia Quadów
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+                Nowoczesna flota maszyn gotowych na najtrudniejszy teren.
+              </p>
+              <ul
+                class="text-xs text-zinc-300 space-y-2 border-t border-zinc-800 pt-4"
+              >
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-brand"></i> Polaris
+                  570
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-brand"></i> Quad 2
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-brand"></i> Quad 3
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-brand/50 transition-colors scroll-reveal"
+              data-scroll-reveal
+            >
+              <div
+                class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center text-brand mb-6"
+              >
+                <i data-lucide="party-popper" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold uppercase mb-3 text-white">
+                Obsługa imprez
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+                Niezapomniane pożegnanie wolności w terenie z pełną organizacją.
+              </p>
+              <ul
+                class="text-xs text-zinc-300 space-y-2 border-t border-zinc-800 pt-4"
+              >
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-brand"></i>
+                  Dedykowany instruktor & Przewodnik
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-brand"></i>
+                  Kiełbasa z grilla
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-brand"></i> Pakiety
+                  zdjęć i wideo
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-brand/50 transition-colors scroll-reveal"
+              data-scroll-reveal
+            >
+              <div
+                class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center text-brand mb-6"
+              >
+                <i data-lucide="crosshair" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold uppercase mb-3 text-white">
+                Mobilna strzelnica ASG
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed mb-4">
+                Rywalizacja na mobilnej strzelnicy z replikami ASG.
+              </p>
+              <ul
+                class="text-xs text-zinc-300 space-y-2 border-t border-zinc-800 pt-4"
+              >
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-brand"></i> Repliki
+                  broni palnej (M4, AK-47)
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-brand"></i> Pakiet
+                  kulek+
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-brand"></i> Pełny
+                  sprzęt ochronny w cenie
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="fleet"
+        class="py-24 bg-zinc-950 border-t border-zinc-900 scroll-reveal"
+        data-scroll-reveal
+      >
+        <!-- Subsection: Wybór modelu quada ze specyfikacją -->
+        <div class="reveal max-w-7xl mx-auto px-6">
+          <div class="text-center max-w-xl mx-auto mb-10">
+            <span class="text-brand font-bold uppercase tracking-widest text-xs"
+              >Nasza Flota</span
+            >
+            <h3
+              class="text-2xl md:text-3xl font-black uppercase mt-1 text-white"
+            >
+              Poznaj nasze maszyny
+            </h3>
+          </div>
+
+          <!-- Menu wyboru modelu (Przycisk / Tab) -->
+          <div
+            class="flex flex-wrap justify-center gap-3 mb-10"
+            id="quad-selector-buttons"
+          >
+            <button
+              type="button"
+              data-quad-key="q1"
+              class="quad-tab-btn active px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-brand text-black shadow-lg shadow-brand/20"
+            >
+              Quad 1
+            </button>
+            <button
+              type="button"
+              data-quad-key="q2"
+              class="quad-tab-btn px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800"
+            >
+              Quad 2
+            </button>
+            <button
+              type="button"
+              data-quad-key="q3"
+              class="quad-tab-btn px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800"
+            >
+              Quad 3
+            </button>
+          </div>
+
+          <!-- Karta z podglądem wybranego Quada -->
+          <div
+            class="bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden shadow-2xl grid md:grid-cols-2 gap-0 items-center"
+          >
+            <!-- Zdjęcie Quada -->
+            <div
+              class="relative h-64 md:h-full min-h-[320px] bg-zinc-950 overflow-hidden"
+            >
+              <img
+                id="quad-display-image"
+                src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80"
+                alt="Quad"
+                class="w-full h-full absolute inset-0 object-cover transition-all duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent md:hidden"
+              ></div>
+            </div>
+
+            <!-- Dane i Tabela Specyfikacji -->
+            <div class="p-6 md:p-10">
+              <div class="flex items-center justify-between mb-4">
+                <h4
+                  id="quad-display-title"
+                  class="text-2xl font-black uppercase text-white"
+                >
+                  Yamaha Grizzly 700
+                </h4>
+                <span
+                  id="quad-display-badge"
+                  class="px-3 py-1 bg-brand/10 border border-brand/30 text-brand text-xs font-bold rounded-full uppercase"
+                  >Top Wyprawowy</span
+                >
+              </div>
+
+              <p
+                id="quad-display-desc"
+                class="text-zinc-400 text-sm mb-6 leading-relaxed"
+              >
+                Niezwykle zwinny i wszechstronny pojazd stworzony do pokonywania
+                najtrudniejszych szlaków górskich i błotnistych przeszkód.
+              </p>
+
+              <!-- Tabela specyfikacji -->
+              <div
+                class="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/60 mb-6"
+              >
+                <table class="w-full text-left text-xs text-zinc-300">
+                  <tbody
+                    id="quad-display-specs"
+                    class="divide-y divide-zinc-800"
+                  >
+                    <!-- Wypełniane dynamicznie przez JS -->
+                  </tbody>
+                </table>
+              </div>
+
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center w-full bg-brand text-black font-bold py-3 rounded-xl hover:bg-brand-hover transition-colors uppercase text-xs tracking-wider gap-2"
+              >
+                Zapytaj o dostępność
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Cennik -->
+      <section
+        id="pricing"
+        class="py-24 bg-zinc-900 border-t border-zinc-800 scroll-reveal"
+        data-scroll-reveal
+      >
+        <div class="max-w-5xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <span class="text-brand font-bold uppercase tracking-widest text-sm"
+              >Przejrzyste zasady</span
+            >
+            <h2
+              class="text-3xl md:text-4xl font-black uppercase mt-2 text-white"
+            >
+              Cennik usług
+            </h2>
+          </div>
+
+          <div
+            class="overflow-x-auto rounded-2xl border border-zinc-800 shadow-xl bg-zinc-950"
+          >
+            <table class="w-full text-left text-sm text-zinc-300">
+              <thead
+                class="bg-zinc-800/50 text-brand uppercase text-xs tracking-wider"
+              >
+                <tr>
+                  <th scope="col" class="px-6 py-4">Usługa / Pakiet</th>
+                  <th scope="col" class="px-6 py-4">Czas trwania</th>
+                  <th scope="col" class="px-6 py-4">Cena</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-800">
+                <tr class="hover:bg-zinc-900/50 transition-colors">
+                  <td class="px-6 py-4 font-semibold text-white">
+                    Wynajem Quada (Jazda swobodna)
+                  </td>
+                  <td class="px-6 py-4">1 godzina</td>
+                  <td class="px-6 py-4 text-brand font-bold">250 PLN</td>
+                </tr>
+                <tr class="hover:bg-zinc-900/50 transition-colors">
+                  <td class="px-6 py-4 font-semibold text-white">
+                    Wyprawa z przewodnikiem (Off-road)
+                  </td>
+                  <td class="px-6 py-4">2 godziny</td>
+                  <td class="px-6 py-4 text-brand font-bold">450 PLN</td>
+                </tr>
+                <tr class="hover:bg-zinc-900/50 transition-colors">
+                  <td class="px-6 py-4 font-semibold text-white">
+                    Pakiet Kawalerski "VIP Extreme"
+                  </td>
+                  <td class="px-6 py-4">Cały dzień (~6h)</td>
+                  <td class="px-6 py-4 text-brand font-bold">
+                    1800 PLN / grupa
+                  </td>
+                </tr>
+                <tr class="hover:bg-zinc-900/50 transition-colors">
+                  <td class="px-6 py-4 font-semibold text-white">
+                    Sesja na strzelnicy ASG
+                  </td>
+                  <td class="px-6 py-4">1.5 godziny</td>
+                  <td class="px-6 py-4 text-brand font-bold">
+                    120 PLN / osoba
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Kontakt -->
+      <section
+        id="contact"
+        class="py-24 bg-zinc-950 border-t border-zinc-900 scroll-reveal"
+        data-scroll-reveal
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <span class="text-brand font-bold uppercase tracking-widest text-sm"
+              >Napisz do nas</span
+            >
+            <h2
+              class="text-3xl md:text-4xl font-black uppercase mt-2 text-white"
+            >
+              Skontaktuj się
+            </h2>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 mb-16">
+            <!-- Contact Form -->
+            <form
+              id="contact-form"
+              action="https://formsubmit.co/ajax/sensuqq@pm.me"
+              method="POST"
+              class="space-y-6 bg-zinc-900 p-8 rounded-2xl border border-zinc-800"
+            >
+              <input type="hidden" name="_captcha" value="false" />
+              <div>
+                <label
+                  class="block text-xs uppercase font-bold text-zinc-400 mb-2"
+                  >Imię i Nazwisko</label
+                >
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="Jan Kowalski"
+                  class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-xs uppercase font-bold text-zinc-400 mb-2"
+                  >Adres Email</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="jan@example.com"
+                  class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-xs uppercase font-bold text-zinc-400 mb-2"
+                  >Numer telefonu</label
+                >
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  pattern="[0-9\s\-]{8,15}"
+                  placeholder="123 456 789"
+                  class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-xs uppercase font-bold text-zinc-400 mb-2"
+                  >Wiadomość</label
+                >
+                <textarea
+                  name="message"
+                  rows="4"
+                  required
+                  placeholder="Opisz swoje zapytanie lub podaj termin eventu..."
+                  class="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand transition-colors"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-brand text-black font-bold py-3.5 rounded-xl hover:bg-brand-hover transition-colors uppercase tracking-wider"
+              >
+                Wyślij Wiadomość
+              </button>
+            </form>
+
+            <!-- Map Placeholder -->
+            <div
+              class="h-full min-h-[300px] bg-zinc-900 rounded-2xl border border-zinc-800 overflow-hidden relative flex items-center justify-center"
+            >
+              <iframe
+                title="Google Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2581.3214148786988!2d18.910679269311515!3d49.68591981737773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47141f85e7a1e5c3%3A0xb540faa81dd415f3!2sWypo%C5%BCyczalnia%20quad%C3%B3w%20Brenna!5e0!3m2!1spl!2spl!4v1785934126877!5m2!1spl!2spl"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Direct Contact Info Icons -->
+          <div
+            class="flex flex-wrap items-center justify-center gap-8 md:gap-16 pt-8 border-t border-zinc-800 text-sm font-semibold scroll-reveal"
+            data-scroll-reveal
+          >
+            <a
+              href="tel:+48574272242"
+              class="flex items-center gap-3 text-zinc-300 hover:text-brand transition-colors"
+            >
+              <div
+                class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-brand"
+              >
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              +48 574 272 242
+            </a>
+            <a
+              href="mailto:quadybrenna@gmail.com"
+              class="flex items-center gap-3 text-zinc-300 hover:text-brand transition-colors"
+            >
+              <div
+                class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-brand"
+              >
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              quadybrenna@gmail.com
+            </a>
+            <a
+              href="https://www.facebook.com/WypozyczalniaQuadowBrenna"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 text-zinc-300 hover:text-brand transition-colors"
+            >
+              <div
+                class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-brand"
+              >
+                <i data-lucide="book-user" class="w-5 h-5"></i>
+              </div>
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/quady_brenna/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 text-zinc-300 hover:text-brand transition-colors"
+            >
+              <div
+                class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-brand"
+              >
+                <i data-lucide="camera" class="w-5 h-5"></i>
+              </div>
+              Instagram
+            </a>
+            <a
+              href="https://wa.me/48574272242"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 text-zinc-300 hover:text-brand transition-colors"
+            >
+              <div
+                class="p-3 bg-zinc-900 rounded-xl border border-zinc-800 text-brand"
+              >
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+              </div>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 py-8 border-t border-zinc-900">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4"
+      >
+        <p>
+          &copy; 2026 Wypożyczalnia Quadów Brenna. Wszelkie prawa zastrzeżone.
+        </p>
+        <p class="text-[11px] text-zinc-600">
+          Projekt i wykonanie strony:
+          <a href="#" class="text-zinc-400 hover:underline"
+            >p.nakraszewicz@pm.me</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Script for Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+  </body>
 </html>
