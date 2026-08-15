@@ -90,7 +90,7 @@ const fleetData = {
   'q1': {
     title: 'Quad 1',
     badge: 'Najchętniej wybierany',
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+    image: './img/c4.png',
     desc: 'Flagowy terenowy quad o legendarnej niezawodności. Idealny na górskie szlaki i wymagające przeprawy.',
     specs: {
       'Pojemność': '686 cm³',
@@ -103,7 +103,7 @@ const fleetData = {
   'q2': {
     title: 'Quad 2',
     badge: 'Potwór Mocy',
-    image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80',
+    image: './img/c3.png',
     desc: 'Maksymalna moc silnika V-Twin dla osób poszukujących bezkompromisowych wrażeń i jazdy we dwoje.',
     specs: {
       'Pojemność': '976 cm³ (V-Twin)',
@@ -116,7 +116,7 @@ const fleetData = {
   'q3': {
     title: 'Quad 3',
     badge: 'Idealny na start',
-    image: 'https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=800&q=80',
+    image: './img/c2.png',
     desc: 'Lekki, łagodny w prowadzeniu i niezwykle komfortowy model, idealny dla początkujących pasjonatów off-roadu.',
     specs: {
       'Pojemność': '567 cm³',
