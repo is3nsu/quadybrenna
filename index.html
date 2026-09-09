@@ -204,33 +204,52 @@
               <i data-lucide="camera" class="text-brand"></i> Zdjęcia z naszych
               wypadów
             </h3>
-            <div
-              class="flex gap-6 overflow-x-auto pb-6 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-zinc-800"
-            >
-              <img
-                src="./img/c1.png"
-                alt="Wypad 1"
-                data-gallery-image
-                class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-              />
-              <img
-                src="./img/c2.png"
-                alt="Wypad 2"
-                data-gallery-image
-                class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-              />
-              <img
-                src="./img/c3.png"
-                alt="Wypad 3"
-                data-gallery-image
-                class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-              />
-              <img
-                src="./img/c4.png"
-                alt="Wypad 4"
-                data-gallery-image
-                class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-              />
+            <div class="relative">
+              <button
+                type="button"
+                data-gallery-prev
+                aria-label="Poprzednie zdjęcia"
+                class="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-xl bg-zinc-900 border border-zinc-800 p-3 text-zinc-300 transition-colors hover:text-white hover:border-brand disabled:pointer-events-none disabled:opacity-30 md:-left-4"
+              >
+                <i data-lucide="chevron-left" class="h-5 w-5"></i>
+              </button>
+              <div
+                data-gallery-track
+                class="flex gap-6 overflow-x-auto scroll-smooth pb-6 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-zinc-800"
+              >
+                <img
+                  src="./img/c1.png"
+                  alt="Wypad 1"
+                  data-gallery-image
+                  class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                />
+                <img
+                  src="./img/c2.png"
+                  alt="Wypad 2"
+                  data-gallery-image
+                  class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                />
+                <img
+                  src="./img/c3.png"
+                  alt="Wypad 3"
+                  data-gallery-image
+                  class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                />
+                <img
+                  src="./img/c4.png"
+                  alt="Wypad 4"
+                  data-gallery-image
+                  class="w-80 h-56 object-cover rounded-xl shrink-0 shadow-lg border border-zinc-800 hover:scale-105 transition-transform duration-300 cursor-zoom-in"
+                />
+              </div>
+              <button
+                type="button"
+                data-gallery-next
+                aria-label="Następne zdjęcia"
+                class="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-xl bg-zinc-900 border border-zinc-800 p-3 text-zinc-300 transition-colors hover:text-white hover:border-brand disabled:pointer-events-none disabled:opacity-30 md:-right-4"
+              >
+                <i data-lucide="chevron-right" class="h-5 w-5"></i>
+              </button>
             </div>
           </div>
         </div>
