@@ -1,0 +1,41 @@
+{
+  "q1": {
+    "title": "Quad 1",
+    "badge": "Najchętniej wybierany",
+    "image": "./img/c4.png",
+    "desc": "Flagowy terenowy quad o legendarnej niezawodności. Idealny na górskie szlaki i wymagające przeprawy.",
+    "specs": {
+      "Pojemność": "686 cm³",
+      "Moc": "48 KM",
+      "Napęd": "2WD / 4WD / Blokada dyferencjału",
+      "Skrzynia": "Automatyczna Ultramatic",
+      "Wspomaganie": "Elektroniczne (EPS)"
+    }
+  },
+  "q2": {
+    "title": "Quad 2",
+    "badge": "Potwór Mocy",
+    "image": "./img/c3.png",
+    "desc": "Maksymalna moc silnika V-Twin dla osób poszukujących bezkompromisowych wrażeń i jazdy we dwoje.",
+    "specs": {
+      "Pojemność": "976 cm³ (V-Twin)",
+      "Moc": "91 KM",
+      "Napęd": "4x4 Visco-Lok QE",
+      "Miejsca": "2-osobowy (wygodne kanapy)",
+      "Wspomaganie": "Trzystopniowe Tri-Mode DPS"
+    }
+  },
+  "q3": {
+    "title": "Quad 3",
+    "badge": "Idealny na start",
+    "image": "./img/c2.png",
+    "desc": "Lekki, łagodny w prowadzeniu i niezwykle komfortowy model, idealny dla początkujących pasjonatów off-roadu.",
+    "specs": {
+      "Pojemność": "567 cm³",
+      "Moc": "44 KM",
+      "Napęd": "Automatyczny True On-Demand AWD",
+      "Zawieszenie": "Niezależne tylne (IRS)",
+      "Wspomaganie": "Tak"
+    }
+  }
+}

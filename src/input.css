@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer components {
+	.hero-video {
+		object-fit: cover;
+		width: 100%;
+		height: 100vh;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+
+	.scroll-reveal {
+		opacity: 0;
+		transform: translateY(40px);
+		transition:
+			opacity 0.8s ease,
+			transform 0.8s ease;
+	}
+
+	.scroll-reveal.revealed {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
