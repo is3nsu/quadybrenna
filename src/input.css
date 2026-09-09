@@ -9,6 +9,23 @@
 }
 
 @layer components {
+	.site-header {
+		transition: transform 300ms ease, opacity 300ms ease;
+	}
+
+	@media (max-width: 767px) {
+		.site-header:not(.header-visible) {
+			pointer-events: none;
+			transform: translateY(-100%);
+			opacity: 0;
+		}
+
+		.mobile-navigation.is-open {
+			max-height: 24rem;
+			opacity: 1;
+		}
+	}
+
 	.hero-video {
 		object-fit: cover;
 		width: 100%;

@@ -1,12 +1,15 @@
 import { initContactForm } from './contact-form.js';
 import { initGalleryLightbox } from './gallery-lightbox.js';
+import { initMobileNavigation } from './mobile-navigation.js';
 import { initScrollReveal } from './scroll-reveal.js';
 import { initQuadViewer } from './quad-viewer.js';
 import { initReviewsCarousel } from './reviews-carousel.js';
 
 function initialize() {
+  if (window.lucide) window.lucide.createIcons();
   initContactForm();
   initGalleryLightbox();
+  initMobileNavigation();
   initScrollReveal();
   initQuadViewer();
   initReviewsCarousel();

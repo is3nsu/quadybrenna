@@ -17,22 +17,24 @@
   >
     <!-- Fixed Topbar Navigation -->
     <header
-      class="fixed top-0 left-0 w-full bg-zinc-950/80 backdrop-blur-md z-50 border-b border-zinc-800/80"
+      id="site-header"
+      class="site-header fixed top-0 left-0 w-full bg-zinc-950/80 backdrop-blur-md z-50 border-b border-zinc-800/80"
     >
       <div
-        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
+        class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between"
       >
         <a
           href="#"
           class="text-xl font-black tracking-wider uppercase flex items-center gap-2 text-brand"
         >
           <img
-            class="object-contain h-10 w-auto"
+            class="object-contain h-8 md:h-10 w-auto"
             src="./img/logo.jpg"
             alt="Logo Wypożyczalnia Quadów Brenna"
           />
         </a>
         <nav
+          id="desktop-navigation"
           aria-label="Główne menu"
           class="hidden md:flex gap-8 text-sm font-semibold tracking-wide uppercase"
         >
@@ -47,12 +49,34 @@
         </nav>
         <a
           href="#contact"
-          class="bg-brand text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-brand-hover transition-colors shadow-lg shadow-amber-500/20"
+          class="hidden md:inline-flex bg-brand text-black px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider hover:bg-brand-hover transition-colors shadow-lg shadow-amber-500/20"
         >
           Rezerwuj
         </a>
-        <!-- Dark Overlay -->
+        <button
+          id="mobile-menu-toggle"
+          type="button"
+          class="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-zinc-200 hover:bg-zinc-800 hover:text-brand transition-colors"
+          aria-label="Otwórz menu"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+        >
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
       </div>
+      <nav
+        id="mobile-navigation"
+        aria-label="Menu mobilne"
+        class="mobile-navigation md:hidden max-h-0 overflow-hidden border-t border-zinc-800/80 bg-zinc-950/95 px-4 opacity-0 transition-all duration-300"
+      >
+        <div class="flex flex-col py-3 text-sm font-semibold uppercase tracking-wide">
+          <a href="#about" class="rounded-lg px-3 py-3 hover:bg-zinc-900 hover:text-brand">O nas</a>
+          <a href="#offer" class="rounded-lg px-3 py-3 hover:bg-zinc-900 hover:text-brand">Oferta</a>
+          <a href="#pricing" class="rounded-lg px-3 py-3 hover:bg-zinc-900 hover:text-brand">Cennik</a>
+          <a href="#contact" class="rounded-lg px-3 py-3 hover:bg-zinc-900 hover:text-brand">Kontakt</a>
+          <a href="#contact" class="mt-2 rounded-lg bg-brand px-3 py-3 text-center text-black hover:bg-brand-hover">Rezerwuj</a>
+        </div>
+      </nav>
     </header>
     <main>
       <!-- Hero Section -->
@@ -87,7 +111,7 @@
             <img
               src="./img/logo.jpg"
               alt="Logo Wypożyczalnia Quadów Brenna"
-              class="h-80 w-auto"
+              class="h-52 sm:h-64 md:h-80 w-auto"
             />
           </div>
           <p
@@ -509,48 +533,53 @@
           </div>
 
           <div
-            class="overflow-x-auto rounded-2xl border border-zinc-800 shadow-xl bg-zinc-950"
+            class="overflow-hidden rounded-2xl border border-zinc-800 shadow-xl bg-zinc-950"
           >
-            <table class="w-full text-left text-sm text-zinc-300">
+            <table class="w-full table-fixed text-left text-xs md:text-sm text-zinc-300">
+              <colgroup>
+                <col class="w-[48%] md:w-[55%]" />
+                <col class="w-[24%] md:w-[22%]" />
+                <col class="w-[28%] md:w-[23%]" />
+              </colgroup>
               <thead
                 class="bg-zinc-800/50 text-brand uppercase text-xs tracking-wider"
               >
                 <tr>
-                  <th scope="col" class="px-6 py-4">Usługa / Pakiet</th>
-                  <th scope="col" class="px-6 py-4">Czas trwania</th>
-                  <th scope="col" class="px-6 py-4">Cena</th>
+                  <th scope="col" class="break-words px-3 py-3 md:px-6 md:py-4">Usługa / Pakiet</th>
+                  <th scope="col" class="break-words px-3 py-3 md:px-6 md:py-4">Czas trwania</th>
+                  <th scope="col" class="break-words px-3 py-3 md:px-6 md:py-4">Cena</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-zinc-800">
                 <tr class="hover:bg-zinc-900/50 transition-colors">
-                  <td class="px-6 py-4 font-semibold text-white">
+                  <td class="break-words px-3 py-3 md:px-6 md:py-4 font-semibold text-white">
                     Wynajem Quada (Jazda swobodna)
                   </td>
-                  <td class="px-6 py-4">1 godzina</td>
-                  <td class="px-6 py-4 text-brand font-bold">250 PLN</td>
+                  <td class="break-words px-3 py-3 md:px-6 md:py-4">1 godzina</td>
+                  <td class="break-words px-3 py-3 md:px-6 md:py-4 text-brand font-bold">250 PLN</td>
                 </tr>
                 <tr class="hover:bg-zinc-900/50 transition-colors">
-                  <td class="px-6 py-4 font-semibold text-white">
+                  <td class="break-words px-3 py-3 md:px-6 md:py-4 font-semibold text-white">
                     Wyprawa z przewodnikiem (Off-road)
                   </td>
-                  <td class="px-6 py-4">2 godziny</td>
-                  <td class="px-6 py-4 text-brand font-bold">450 PLN</td>
+                  <td class="break-words px-3 py-3 md:px-6 md:py-4">2 godziny</td>
+                  <td class="break-words px-3 py-3 md:px-6 md:py-4 text-brand font-bold">450 PLN</td>
                 </tr>
                 <tr class="hover:bg-zinc-900/50 transition-colors">
-                  <td class="px-6 py-4 font-semibold text-white">
+                  <td class="break-words px-3 py-3 md:px-6 md:py-4 font-semibold text-white">
                     Pakiet Kawalerski "VIP Extreme"
                   </td>
-                  <td class="px-6 py-4">Cały dzień (~6h)</td>
-                  <td class="px-6 py-4 text-brand font-bold">
+                  <td class="break-words px-3 py-3 md:px-6 md:py-4">Cały dzień (~6h)</td>
+                  <td class="break-words px-3 py-3 md:px-6 md:py-4 text-brand font-bold">
                     1800 PLN / grupa
                   </td>
                 </tr>
                 <tr class="hover:bg-zinc-900/50 transition-colors">
-                  <td class="px-6 py-4 font-semibold text-white">
+                  <td class="break-words px-3 py-3 md:px-6 md:py-4 font-semibold text-white">
                     Sesja na strzelnicy ASG
                   </td>
-                  <td class="px-6 py-4">1.5 godziny</td>
-                  <td class="px-6 py-4 text-brand font-bold">
+                  <td class="break-words px-3 py-3 md:px-6 md:py-4">1.5 godziny</td>
+                  <td class="break-words px-3 py-3 md:px-6 md:py-4 text-brand font-bold">
                     120 PLN / osoba
                   </td>
                 </tr>
